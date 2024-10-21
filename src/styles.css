@@ -1,0 +1,256 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; 
+  margin: 0;
+  padding: 20px;
+}
+
+.login-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://d1ih8jugeo2m5m.cloudfront.net/2024/08/ejemplos_de_paginas_web.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9; 
+}
+
+h1 {
+  color: #0d0d0d;
+  text-align: center;
+  font-size: 60px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.login-card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 55%; 
+  border: 5px solid black; 
+  max-width: 600px; 
+}
+
+.login-image {
+  width: 300px;
+  height: 215px;
+  margin-bottom: 20px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 90%;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+  border: 2px solid #000; 
+}
+
+.login-button,
+.cancel-button {
+  width: 45%; 
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px; 
+}
+
+.login-button {
+  background-color: #007bff;
+  color: white;
+  border: 2px solid #0056b3; 
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: white;
+  border: 2px solid #c82333; 
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+.cancel-button:hover {
+  background-color: #c82333;
+}
+
+/* Estilos de la tabla */
+.posts-table {
+  background-color: rgb(233 30 99 / 6%);
+  border: solid 4px black;
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(239, 16, 150, 0.2); 
+}
+
+.posts-table th, .posts-table td {
+  padding: 8px; 
+  font-size: 18px;
+  text-align: center; 
+  border: 1px solid black;
+}
+ 
+.action-buttons {
+  display: flex;
+  gap: 10px; 
+}
+
+.create-post-btn {
+  background-color: #a7059c; 
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px; 
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px; 
+  cursor: pointer;
+}
+
+.create-post-btn:hover {
+  background-color: #790568; 
+}
+
+th, td {
+  padding: 10px; 
+  text-align: left;
+  border-bottom: 1px solid #ddd; 
+}
+
+th {
+  background-color: #71076b45;; 
+  color: rgb(7, 7, 7); 
+}
+
+.edit {
+  background-color: #28a745; 
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+.delete {
+  background-color: #dc3545; 
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+.edit:hover {
+  background-color: #7c0a8b; 
+}
+
+.delete:hover {
+  background-color: #7c0a8b; 
+}
+
+/* Estilos de paginación */
+.pagination {
+  display: flex;
+  justify-content: center; 
+  margin: 20px 0; 
+}
+
+.pagination button {
+  background-color: #8d788a; 
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px; 
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #8d788a; 
+}
+
+/* Estilos del modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.modal-content {
+  background-color: #fff;
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px; 
+  max-width: 90%; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+}
+
+.modal-content h2 {
+  margin: 0 0 20px;
+}
+
+.modal-content input[type="text"],
+.modal-content textarea {
+  width: 90%; 
+  padding: 10px;
+  border: 1px solid #0c0b0b;
+  border-radius: 8px; 
+  margin-bottom: 10px; 
+}
+
+.create, .cancel {
+  padding: 8px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.create {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.cancel {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+.modal-content button.create:hover {
+  background-color: #0056b3; 
+}
+
+.modal-content button.cancel:hover {
+  background-color: #c82333; 
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+}
+
