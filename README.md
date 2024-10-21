@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# Proyecto: Lista de Posts
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una aplicación frontend desarrollada en React que muestra una lista de posts obtenidos de la API pública de [JSONPlaceholder](https://jsonplaceholder.typicode.com/posts). La aplicación permite crear, editar y eliminar posts, y maneja notificaciones a través de modales según las acciones ejecutadas.
 
-## Available Scripts
+## Tabla de Contenidos
+1. [Requisitos](#requisitos)
+2. [Instalación](#instalación)
+3. [Estructura del Proyecto](#estructura-del-proyecto)
+4. [Uso](#uso)
+5. [Componentes Principales](#componentes-principales)
+6. [Despliegue en GitHub](#despliegue-en-github)
+7. [Contacto](#contacto)
 
-In the project directory, you can run:
+## Requisitos
+Construir una aplicación que al iniciar liste los posts paginados en un data table. Cada post debe tener el botón de eliminar. Se deben crear los formularios respectivos para publicar y actualizar un post, además de mostrar una ventana (modal) de notificación para cualquiera de las operaciones realizadas.
 
-### `npm start`
+## Instalación 
+Comandos ejecutados en el proyecto
+```bash
+npx create-react-app prueba-frontend
+cd prueba-frontend
+npm install axios
+npm install
+npm start  # Ejecutar el proyecto
+npm install --save-dev @babel/preset-env @babel/preset-react
+npm test   # Ejecutar las pruebas
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Estructura del Proyecto
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+El proyecto sigue la siguiente estructura de archivos:
 
-### `npm test`
+```bash
+📁 src/
+│
+├── 📁 components/
+│   ├── LoginPage.jsx    # Componente para renderizar pagina de inicio / login 
+│   ├── PostList.jsx     # Componente principal que muestra la lista de posts
+│   ├── PostForm.jsx     # Formulario para crear o editar posts
+│   ├── Modal.jsx        # Componente reutilizable para mostrar modales
+│   ├── ModalForm.jsx    # Modal específico para manejar el formulario de posts
+│
+├── App.js               # Punto de entrada principal del proyecto React
+├── api.js               # Lógica para realizar peticiones HTTP a la API de posts
+└── index.js             # Configuración de React DOM y renderización
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## USO
+- **Listar Posts**: En la página principal, se listarán los posts obtenidos de la API con paginación.
+- **Crear Post**: Puedes crear un nuevo post desde el botón "Crear Nuevo Post". Esto abrirá un modal con un formulario.
+- **Editar Post**: Cada post tiene un botón de edición que permite modificar el título y contenido del post.
+- **Eliminar Post**: También puedes eliminar un post, y una notificación de éxito aparecerá tras la confirmación.
+- **Paginación**: En la parte inferior de la lista, puedes navegar entre diferentes páginas de posts con los botones "Anterior" y "Siguiente".
 
-### `npm run build`
+## Componentes Principales 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **LoginPage.jsx**  
+   - Renderiza una vista sencilla de inicio para simular un Login, con un formulario para ingresar usuario y contraseña, que da acceso a la lista de posts.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **PostList.jsx**  
+   Componente principal que:
+   - Muestra la lista de posts.
+   - Maneja la paginación de los posts.
+   - Incluye los botones para crear, editar y eliminar posts.
+   - Se comunica con los modales para confirmar acciones y mostrar notificaciones.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **PostForm.jsx**  
+   - Componente que gestiona el formulario para la creación y edición de posts. Al enviar el formulario, dependiendo de si se trata de una creación o edición, se actualizará el listado de posts.
 
-### `npm run eject`
+4. **Modal.jsx**  
+   Componente reutilizable que se utiliza para:
+   - Mostrar mensajes de confirmación al eliminar un post.
+   - Mostrar notificaciones de éxito.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. **ModalForm.jsx**  
+   - Este modal contiene el formulario (PostForm) y se utiliza para crear o editar un post.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Archivo `api.js`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Este archivo se encarga de la interacción con la API de JSONPlaceholder:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Obtener Posts**: con la función `fetchPosts()`, que permite obtener los posts en bloques de 20 elementos.
+- **Crear Post**: con la función `createPost()`.
+- **Actualizar Post**: con la función `updatePost()`.
+- **Eliminar Post**: con la función `deletePost()`.
 
-## Learn More
+## Despliegue en Github 
+Comandos utilizados para subir el proyecto en Github
+```bash
+cd /ruta/a/tu/proyecto
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/ValenParaguatey/prueba-frontend-posts.git
+git branch -M main
+git push -u origin main
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contacto
+Si tienes alguna duda o pregunta, puedes contactarme a través de mi perfil de GitHub ValenParaguatey.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
